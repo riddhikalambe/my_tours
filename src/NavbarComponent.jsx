@@ -44,7 +44,7 @@ const NavbarComponent = () => {
                 </div>
             </nav>
 
-            {showModal && <Register setShowModal={setShowModal} /> } 
+            {showModal && <Register setShowModal={setShowModal} />} 
         </div>
     );
 };
