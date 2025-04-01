@@ -11,7 +11,7 @@ export const travelData = [
     { 
       id: 2,
       title: "Italy",
-      description: "Italy, a European country with a long Mediterranean coastline, has left a powerful mark on Western culture and cuisine.",
+      description: "Italy, a European country with a long Mediterranean coastline, has left a powerful mark on Western culture and cuisine. ",
       image: "indo.jpeg",
       rating: "★ ★ ★ ★ ☆",
       price: 4500,
