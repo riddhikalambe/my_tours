@@ -8,7 +8,7 @@ export const travelData = [
       price: 5000,
       currency: "USD"
     },
-    {
+    { 
       id: 2,
       title: "Italy",
       description: "Italy, a European country with a long Mediterranean coastline, has left a powerful mark on Western culture and cuisine.",
