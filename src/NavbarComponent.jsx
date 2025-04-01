@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Register from './Register';
+import LoginPage from "./Login";
 
 const NavbarComponent = () => {
     const [showModal, setShowModal] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
 
     return (
         <div>
@@ -37,13 +39,13 @@ const NavbarComponent = () => {
                             <li className="nav-item"><a className="nav-link" href="#">About</a></li>
                         </ul>
                         <form className="d-flex">
-                            <button className="btn bg-warning text-white me-2" type="button">Login</button>
+                            <button className="btn bg-warning text-white me-2" type="button" onClick={() => setShowLogin(true)}>Login</button>
                             <button className="btn bg-primary text-white" type="button" onClick={() => setShowModal(true)}>Register</button>
                         </form>
                     </div>
                 </div>
             </nav>
-
+            {showLogin && <LoginPage setShowLogin={setShowLogin}/>}
             {showModal && <Register setShowModal={setShowModal} />} 
         </div>
     );

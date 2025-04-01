@@ -1,6 +1,10 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
-const Register = ({ setShowModal }) => {
+const Register = ({setShowModal}) => {
+
+    const navigate = useNavigate();
+
     const validatePhoneNumber = (phone) => {
         const phoneRegex = /^[0-9]{10}$/;
         return phoneRegex.test(phone);
@@ -15,6 +19,10 @@ const Register = ({ setShowModal }) => {
         }
         alert("Form submitted successfully!");
     };
+    const handleClose = () => {
+        setShowModal(false); // Close the modal
+        navigate(-1); // Go back to the previous page (or you can specify a specific route like '/login')
+    };
 
     return (
         <div className="modal fade show d-block" tabIndex="-1">
@@ -22,7 +30,7 @@ const Register = ({ setShowModal }) => {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">Register Form</h5>
-                        <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
+                        <button type="button" className="btn-close" onClick={handleClose}></button>
                     </div>
                     <div className="modal-body">
                         <form onSubmit={handleSubmit}>
@@ -56,7 +64,7 @@ const Register = ({ setShowModal }) => {
                                 </select>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Close</button>
+                                <button type="button" className="btn btn-secondary" onClick={handleClose}>Close</button>
                                 <button type="submit" className="btn btn-primary">Submit</button>
                             </div>
                         </form>
